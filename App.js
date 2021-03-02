@@ -7,7 +7,7 @@ import { ToDo } from './src/ToDo';
 
 export default function App() {
   const [todos, setTodos] = useState([])
-  // ф-ия добавления нового элемента Todo
+  
   const addToDo = (title) => {    
     setTodos(prev => [
       ...prev,
@@ -18,28 +18,28 @@ export default function App() {
     ])
   }
 
+  const removeTodo = id => {
+    setTodos(prev => prev.filter(todo => todo.id !== id))
+  }
+
   return (
     <View>
       <Navbar appTitle='Мои бирки' />
       <View style={ styles.container }>
+        
         <AddToDo onSubmit={addToDo} />
 
         <FlatList 
           keyExtractor={item => item.id.toString()}
           data={todos}
-          renderItem={({ item }) => <ToDo todo={item}/> }
+          renderItem={({ item }) => <ToDo todo={item} onRemove={removeTodo} /> }
         />
 
-        {/* <ScrollView>
-          {todos.map(todo => (
-            <ToDo key={todo.id} todo={todo}/> 
-          ))}
-        </ScrollView> */}
       </View>      
     </View>
   );
 }
-// стили:
+
 const styles = StyleSheet.create({
   container: {
     paddingHorizontal: 20,

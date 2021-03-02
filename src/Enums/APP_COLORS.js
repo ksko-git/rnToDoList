@@ -1,6 +1,3 @@
-import React from 'react';
-import {Text} from 'react-native';
-
 export const APP_COLORS = {
     amethyst: '#9966CC',
     LightLavender: '#9966FF',

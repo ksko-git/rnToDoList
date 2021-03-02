@@ -1,15 +1,24 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { APP_COLORS } from './Enums/APP_COLORS';
 
-export const ToDo = ({ todo }) => {
+export const ToDo = ({ todo, onRemove }) => {
+    const longPressHandler = () => {
+        onRemove(todo.id)
+    }
+
     return(
-        <View style={styles.todo}>
-            <Text>{todo.title}</Text>
-        </View>
+        <TouchableOpacity 
+            onPress={() => console.log('Pressed', todo.id)}
+            onLongPress={longPressHandler}
+        >
+            <View style={styles.todo}>
+                <Text>{todo.title}</Text>
+            </View>
+        </TouchableOpacity>
     )
 }
-// стили:
+
 const styles = StyleSheet.create({
     todo: {
         flexDirection: 'row',

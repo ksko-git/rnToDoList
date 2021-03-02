@@ -19,7 +19,7 @@ export const AddToDo = ({ onSubmit }) => {
         <View style={styles.mainBlock}>
             <TextInput 
                 style={styles.input} 
-                onChangeText={text => setValue(text)}
+                onChangeText={setValue}
                 value={value}
                 placeholder="Введите название дела..."
                 autoCorrect={false} // убрать автоисправление вводимых слов
@@ -32,7 +32,7 @@ export const AddToDo = ({ onSubmit }) => {
         </View>        
     )
 }
-// стили:
+
 const styles = StyleSheet.create({
     mainBlock: {
         flexDirection: 'row',
