@@ -2,6 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, ScrollView, FlatList } from 'react-native';
 import { AddToDo } from './src/AddToDo';
+import { BraSizes } from './src/layouts/BraSizes';
 import { Navbar } from './src/Navbar';
 import { ToDo } from './src/ToDo';
 
@@ -34,6 +35,8 @@ export default function App() {
           data={todos}
           renderItem={({ item }) => <ToDo todo={item} onRemove={removeTodo} /> }
         />
+
+        <BraSizes></BraSizes>
 
       </View>      
     </View>
