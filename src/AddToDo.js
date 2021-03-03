@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { View, TextInput, Button, StyleSheet, Alert } from 'react-native';
-import { APP_COLORS } from './Enums/APP_COLORS';
+import { app_colors } from './enums/app_colors';
 
 export const AddToDo = ({ onSubmit }) => {
 
@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
         width: '60%',
         borderStyle: 'solid',
         borderBottomWidth: 2,
-        borderBottomColor: APP_COLORS.mountbattenPink,
+        borderBottomColor: app_colors.mountbattenPink,
         padding: 10
     },
     button: {

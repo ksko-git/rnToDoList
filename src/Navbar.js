@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
-import { APP_COLORS } from './Enums/APP_COLORS';
+import { app_colors } from './enums/app_colors';
 
 export const Navbar = props => {
     return (
@@ -16,11 +16,11 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'flex-end',
         paddingBottom: 12,
-        backgroundColor: APP_COLORS.loopTallinn,
+        backgroundColor: app_colors.loopTallinn,
 
     },
     navbarText: {
-        color: APP_COLORS.pastelPink,
+        color: app_colors.pastelPink,
         fontSize: 20
     },
 })

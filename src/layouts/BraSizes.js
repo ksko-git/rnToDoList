@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { View, StyleSheet, Text, TextInput } from 'react-native';
-import { APP_COLORS } from '../Enums/APP_COLORS';
+import { app_colors } from '../enums/app_colors';
 
 export const BraSizes = () => {
 
@@ -98,19 +98,19 @@ export const BraSizes = () => {
     countryCodeBlock: {        
         borderStyle: 'solid',      
         borderWidth: 2,
-        borderColor: APP_COLORS.deepLavender,        
+        borderColor: app_colors.deepLavender,        
     },
     countryCodeTitle: {        
         fontSize: 20,
         textAlign: 'center',
-        color: APP_COLORS.loopTallinn,        
+        color: app_colors.loopTallinn,        
     },
     input: {
         borderStyle: 'solid',
         fontSize: 20,
         textAlign: 'center',
         borderBottomWidth: 2,
-        borderBottomColor: APP_COLORS.lavender,
+        borderBottomColor: app_colors.lavender,
         padding: 10
     },
  })

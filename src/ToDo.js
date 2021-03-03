@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
-import { APP_COLORS } from './Enums/APP_COLORS';
+import { app_colors } from './enums/app_colors';
 
 export const ToDo = ({ todo, onRemove }) => {
     const longPressHandler = () => {
@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         padding: 15,
         borderWidth: 1,
-        borderColor: APP_COLORS.loopTallinn,
+        borderColor: app_colors.loopTallinn,
         borderRadius: 5,
         marginBottom: 10
     }

@@ -1,4 +1,4 @@
-export const APP_COLORS = {
+export const app_colors = {
     amethyst: '#9966CC',
     LightLavender: '#9966FF',
     deepLavender: '#6600CC',
