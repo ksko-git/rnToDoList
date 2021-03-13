@@ -1,41 +1,47 @@
-import React, { useState } from 'react';
-import { View, StyleSheet, Text, TextInput } from 'react-native';
-import { app_colors } from '../enums/app_colors';
+import React from 'react';
+import { View, StyleSheet } from 'react-native';
+import { APP_COLORS } from '../../enums/APP_COLORS';
+import { AppTextInput } from './AppTextInput';
+import { AppText } from './AppText';
 
 export const BraSizes = () => {
-
-    const [value, setValue] = useState('')
-
     return (
-        <View style={styles.mainBlock}>    
+        <View style={styles.mainBlock}>  
+            <AppTextInput style={styles.headerText}>Размеры</AppTextInput>  
             <View style={styles.braSizesMainBlock}>
                 <View style={styles.sizeBlock}>
                     <View style={styles.countryCodeBlock} >
-                        <Text style={styles.countryCodeTitle}>IT</Text>
+                        <AppTextInput style={styles.countryCodeTitle}>IT</AppTextInput>
                     </View>
-                    <TextInput 
+                    <AppInput 
                         style={styles.input} 
                         placeholder="2C"
+                        placeholderTextColor={APP_COLORS.secondaryText}
+                        maxLength={3}
                         autoCorrect={false} 
                     />
                 </View> 
                 <View style={styles.sizeBlock}>
                     <View style={styles.countryCodeBlock} >
-                        <Text style={styles.countryCodeTitle}>EU</Text>
+                        <AppTextInput style={styles.countryCodeTitle}>EU</AppTextInput>
                     </View>
-                    <TextInput 
+                    <AppInput 
                         style={styles.input} 
                         placeholder="75C"
+                        placeholderTextColor={APP_COLORS.secondaryText}
+                        maxLength={3}
                         autoCorrect={false} 
                     />
                 </View>
                 <View style={styles.sizeBlock}>
                     <View style={styles.countryCodeBlock} >
-                        <Text style={styles.countryCodeTitle}>ES</Text>
+                        <AppTextInput style={styles.countryCodeTitle}>ES</AppTextInput>
                     </View>
-                    <TextInput 
+                    <AppInput 
                         style={styles.input} 
                         placeholder="85C"
+                        placeholderTextColor={APP_COLORS.secondaryText}
+                        maxLength={3}
                         autoCorrect={false} 
                     />
                 </View>
@@ -43,48 +49,55 @@ export const BraSizes = () => {
             <View style={styles.braSizesMainBlock}>
                 <View style={styles.sizeBlock}>
                     <View style={styles.countryCodeBlock} >
-                        <Text style={styles.countryCodeTitle}>FR</Text>
+                        <AppTextInput style={styles.countryCodeTitle}>FR</AppTextInput>
                     </View>
-                    <TextInput 
+                    <AppInput 
                         style={styles.input} 
                         placeholder="85C"
+                        placeholderTextColor={APP_COLORS.secondaryText}
+                        maxLength={3}
                         autoCorrect={false} 
                     />
                 </View>
                 <View style={styles.sizeBlock}>
                     <View style={styles.countryCodeBlock} >
-                        <Text style={styles.countryCodeTitle}>UK</Text>
+                        <AppTextInput style={styles.countryCodeTitle}>UK</AppTextInput>
                     </View>
-                    <TextInput 
+                    <AppInput 
                         style={styles.input} 
                         placeholder="34C"
+                        placeholderTextColor={APP_COLORS.secondaryText}
+                        maxLength={3}
                         autoCorrect={false} 
                     />
                 </View>
                 <View style={styles.sizeBlock}>
                     <View style={styles.countryCodeBlock} >
-                        <Text style={styles.countryCodeTitle}>USA</Text>
+                        <AppTextInput style={styles.countryCodeTitle}>USA</AppTextInput>
                     </View>
-                    <TextInput 
+                    <AppInput 
                         style={styles.input} 
                         placeholder="34C"
+                        placeholderTextColor={APP_COLORS.secondaryText}
+                        maxLength={3}
                         autoCorrect={false} 
                     />
                 </View>  
-            </View>       
-            
-            
-            
-                     
+            </View>                          
         </View>       
     )
 }
  const styles = StyleSheet.create({
     mainBlock: {
         borderWidth: 2,
-        // flexDirection: 'column',
-        // justifyContent: 'space-between',
         padding: 10,
+        backgroundColor: APP_COLORS.tertiaryBackground
+    },
+    headerText: {
+        fontSize: 22,
+        fontWeight: '500',
+        textAlign: 'center',
+        paddingBottom: 8
     },
     braSizesMainBlock: {
         flexDirection: 'row',
@@ -93,24 +106,17 @@ export const BraSizes = () => {
     },
     sizeBlock: {
         width: 64,
-        // height: 44
     },
     countryCodeBlock: {        
         borderStyle: 'solid',      
-        borderWidth: 2,
-        borderColor: app_colors.deepLavender,        
+        borderWidth: 1.5,
+        borderColor: APP_COLORS.secondaryBackground,  
+        backgroundColor: APP_COLORS.input 
     },
-    countryCodeTitle: {        
-        fontSize: 20,
-        textAlign: 'center',
-        color: app_colors.loopTallinn,        
+    countryCodeTitle: {   
+        textAlign: 'center',      
     },
     input: {
-        borderStyle: 'solid',
-        fontSize: 20,
         textAlign: 'center',
-        borderBottomWidth: 2,
-        borderBottomColor: app_colors.lavender,
-        padding: 10
     },
  })

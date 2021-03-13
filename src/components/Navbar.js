@@ -1,11 +1,12 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
-import { app_colors } from './enums/app_colors';
+import {View, StyleSheet} from 'react-native';
+import { APP_COLORS } from '../enums/APP_COLORS';
+import { AppText } from './ui/AppText';
 
 export const Navbar = props => {
     return (
         <View style={styles.navbar}>
-            <Text style={styles.navbarText}>{ props.appTitle }</Text>
+            <AppText style={styles.navbarText}>{props.appTitle}</AppText>
         </View>
     )
 }
@@ -16,11 +17,11 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'flex-end',
         paddingBottom: 12,
-        backgroundColor: app_colors.loopTallinn,
+        backgroundColor: APP_COLORS.mainBackground,
 
     },
     navbarText: {
-        color: app_colors.pastelPink,
+        color: APP_COLORS.mainText,
         fontSize: 20
     },
 })

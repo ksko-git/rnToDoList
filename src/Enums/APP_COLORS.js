@@ -1,10 +1,14 @@
-export const app_colors = {
-    amethyst: '#9966CC',
-    LightLavender: '#9966FF',
-    deepLavender: '#6600CC',
-    lavender: '#6633CC',
-    purple: '#663399',
-    loopTallinn: '#330033',
-    pastelPink: '#ffd1dc',
-    mountbattenPink: '#996699',
+export const APP_COLORS = {
+    mainBackground: '#251c17', // главный фон (темный)
+    secondaryBackground: '#654737', // главный фон (светлее)
+    tertiaryBackground: '#cca978', // фон для блоков
+    input: '#8e7742', // цвет для input
+    mainText: '#ffffff', // цвет для текста (основной)
+    secondaryText: '#757575', // цвет для текста (второстепенный)
+    brightText: '#e32636', // цвет для выделения текста (яркий)
+    BLACK: '#000000',
+    WHITE: '#ffffff',
+    DANGER: '#e32636', 
+    LIGHT_GREY: '#757575',
+    DARK_SEA_GREEN: '#99CC99',
 }
