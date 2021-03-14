@@ -6,9 +6,13 @@ export const APP_COLORS = {
     mainText: '#ffffff', // цвет для текста (основной)
     secondaryText: '#757575', // цвет для текста (второстепенный)
     brightText: '#e32636', // цвет для выделения текста (яркий)
+
+
     BLACK: '#000000',
     WHITE: '#ffffff',
-    DANGER: '#e32636', 
+    CYPRUS: '#003333',
+    NEVADA: '#607373',
+    DANGER: '#811111', 
     LIGHT_GREY: '#757575',
     DARK_SEA_GREEN: '#99CC99',
 }

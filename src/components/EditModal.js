@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { StyleSheet, View, Button, Modal, Alert } from 'react-native';
 import { APP_COLORS } from '../enums/APP_COLORS';
+import { AppButton } from './ui/AppButton';
 import { AppTextInput } from './ui/AppTextInput';
-
 
 export const EditModal = ({ visible, onCancel, value, onSave }) => {
     const [title, setTitle] = useState(value) // заголовок todo, взятый из TodoScreen
@@ -35,8 +35,12 @@ export const EditModal = ({ visible, onCancel, value, onSave }) => {
                     maxLength={64}
                 />
                 <View style={styles.buttons}>
-                    <Button title="Отменить" onPress={onCancel} color={APP_COLORS.DANGER} />
-                    <Button title="Сохранить" onPress={saveHandler} />
+                    <AppButton onPress={onCancel} color={APP_COLORS.DANGER}>
+                        Отменить
+                    </AppButton>
+                    <AppButton onPress={saveHandler}>
+                        Сохранить
+                    </AppButton>
                 </View>
             </View>            
         </Modal>

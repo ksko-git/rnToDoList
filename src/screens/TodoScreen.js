@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, Button } from 'react-native';
+import { View, Text, StyleSheet, Dimensions } from 'react-native';
+import { FontAwesome, Ionicons, MaterialIcons } from '@expo/vector-icons';
+
 import { EditModal } from '../components/EditModal';
 import { AppButton } from '../components/ui/AppButton';
 import { AppCard } from '../components/ui/AppCard';
@@ -30,8 +32,8 @@ export const TodoScreen = ({ goBack, todo, onRemove, onSave }) => {
             <AppCard style={styles.card}>
                 <Text>{todo.title}</Text>
                 {/* показать модальное окно */}
-                <AppButton onPress={() => setModal(true)} color={APP_COLORS.DARK_SEA_GREEN}>
-                    Ред.
+                <AppButton onPress={() => setModal(true)} color={APP_COLORS.CYPRUS}>
+                    <FontAwesome name='edit' size={20} color={APP_COLORS.WHITE} />
                 </AppButton>
             </AppCard>
 
@@ -39,12 +41,12 @@ export const TodoScreen = ({ goBack, todo, onRemove, onSave }) => {
             <View style={styles.buttons}>
                 <View style={styles.button}>
                     <AppButton onPress={goBack} color={APP_COLORS.LIGHT_GREY}>
-                        Назад
+                        <Ionicons name='arrow-back-circle-outline' size={20} color={APP_COLORS.WHITE} />
                     </AppButton>
                 </View>
                 <View style={styles.button}>
                     <AppButton onPress={() => onRemove(todo.id)} color={APP_COLORS.DANGER}>
-                        Удалить 
+                        <MaterialIcons name='highlight-remove' size={20} color={APP_COLORS.WHITE} />
                     </AppButton>
                 </View>
             </View>
@@ -62,6 +64,6 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between'
     },
     button: {
-        width: '40%'
+        width: Dimensions.get('window').width / 3.4
     }
 })

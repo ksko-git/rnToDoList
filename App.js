@@ -5,6 +5,7 @@ import { Navbar } from './src/components/Navbar';
 import { MainScreen } from './src/screens/MainScreen';
 import { TodoScreen } from './src/screens/TodoScreen';
 import { BraSizes } from './src/components/ui/BraSizes';
+import { LAYOUT_BLANKS } from './src/enums/LAYOUT_BLANKS';
 
 // async function loadApplication() {
 //   await Font.loadAsync({
@@ -107,7 +108,7 @@ export default function App() {
   return (
     <View>
       <Navbar appTitle='Мои бирки' />
-      <View style={ styles.container }>
+      <View style={styles.container}>
         {content}
       </View>      
     </View>
@@ -116,7 +117,7 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
-    paddingHorizontal: 20,
-    paddingVertical: 30
+    paddingHorizontal: LAYOUT_BLANKS.paddingHorizontal,
+    paddingVertical: LAYOUT_BLANKS.paddingVertical
   }
 });

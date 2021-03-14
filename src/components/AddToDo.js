@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, StyleSheet, Alert } from 'react-native';
+import { View, StyleSheet, Alert, Keyboard } from 'react-native';
 import { APP_COLORS } from '../enums/APP_COLORS';
 import { AntDesign } from '@expo/vector-icons';
 import { AppTextInput } from './ui/AppTextInput'
@@ -12,6 +12,7 @@ export const AddToDo = ({ onSubmit }) => {
         if (value.trim()) {
             onSubmit(value) // добавить в стипок
             setValue('') // очистить input
+            Keyboard.dismiss()
         } else {
             Alert.alert('Название дела не может оставаться пустым!')
         }        

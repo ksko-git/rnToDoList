@@ -1,15 +1,25 @@
 import React from 'react';
-import { StyleSheet, View, TouchableOpacity } from 'react-native';
+import { 
+    StyleSheet, 
+    View, 
+    TouchableOpacity, 
+    Platform, 
+    TouchableNativeFeedback 
+} from 'react-native';
 import { APP_COLORS } from '../../enums/APP_COLORS';
 import { AppText } from './AppText';
 
 export const AppButton = ({ children, onPress, color=APP_COLORS.LIGHT_GREY }) => {
+
+    const Wrapper = 
+        Platform.OS === 'android' ? TouchableNativeFeedback : TouchableOpacity
+
     return(
-        <TouchableOpacity onPress={onPress} activeOpacity={0.7} >
+        <Wrapper onPress={onPress} activeOpacity={0.7} >
             <View style={{ ...styles.button, backgroundColor: color }}>
                 <AppText style={styles.text}>{children}</AppText>
             </View>
-        </TouchableOpacity>
+        </Wrapper>
     )
 }
 
@@ -20,7 +30,7 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         flexDirection: 'row',
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
     },
     text: {
         fontWeight: '600',
