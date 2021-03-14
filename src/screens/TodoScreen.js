@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { View, Text, StyleSheet, Dimensions } from 'react-native';
 import { FontAwesome, Ionicons, MaterialIcons } from '@expo/vector-icons';
 
@@ -6,14 +6,22 @@ import { EditModal } from '../components/EditModal';
 import { AppButton } from '../components/ui/AppButton';
 import { AppCard } from '../components/ui/AppCard';
 import { APP_COLORS } from '../enums/APP_COLORS';
+import { TodoContext } from '../context/todo/todoContext';
+import { ScreenContext } from '../context/screen/screenContext';
 
-export const TodoScreen = ({ goBack, todo, onRemove, onSave }) => {
+export const TodoScreen = () => {
+
+    const { todos, updateTodo, removeTodo } = useContext(TodoContext)
+    const { todoId, changeScreen } = useContext(ScreenContext)
+
+    const todo = todos.find(t => t.id === todoId)
+
     // модальное (всплывающее) окно не видно по умолчанию
     const [modal, setModal] = useState(false)
 
     const saveHandler = title => {
         // передаем пропсы в App
-        onSave(todo.id, title)
+        updateTodo(todo.id, title)
         // закрываем модальное окно
         setModal(false)
     }
@@ -40,12 +48,12 @@ export const TodoScreen = ({ goBack, todo, onRemove, onSave }) => {
             
             <View style={styles.buttons}>
                 <View style={styles.button}>
-                    <AppButton onPress={goBack} color={APP_COLORS.LIGHT_GREY}>
+                    <AppButton onPress={() => changeScreen(null)} color={APP_COLORS.LIGHT_GREY}>
                         <Ionicons name='arrow-back-circle-outline' size={20} color={APP_COLORS.WHITE} />
                     </AppButton>
                 </View>
                 <View style={styles.button}>
-                    <AppButton onPress={() => onRemove(todo.id)} color={APP_COLORS.DANGER}>
+                    <AppButton onPress={() => removeTodo(todo.id)} color={APP_COLORS.DANGER}>
                         <MaterialIcons name='highlight-remove' size={20} color={APP_COLORS.WHITE} />
                     </AppButton>
                 </View>

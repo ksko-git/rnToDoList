@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { 
     View, 
     StyleSheet, 
@@ -8,12 +8,18 @@ import {
 } from 'react-native';
 import { AddToDo } from '../components/AddToDo';
 import { ToDo } from '../components/ToDo';
+import { ScreenContext } from '../context/screen/screenContext';
+import { TodoContext } from '../context/todo/todoContext';
 import { LAYOUT_BLANKS } from '../enums/LAYOUT_BLANKS';
 
-export const MainScreen = ({ addToDo, todos, removeTodo, openTodo }) => {
+export const MainScreen = () => {
 
-    const [deviceWidth, setDeviceWidth] = 
-        useState(Dimensions.get('window').width - LAYOUT_BLANKS.paddingHorizontal * 2)
+    const { todos, addToDo, removeTodo } = useContext(TodoContext)
+    const { changeScreen } = useContext(ScreenContext)
+
+    const [deviceWidth, setDeviceWidth] = useState(
+        Dimensions.get('window').width - LAYOUT_BLANKS.paddingHorizontal * 2
+    )
 
     // запустится 1 раз при инициализации компонента
     //при изменении ширины экрана, вызывается функция,
@@ -39,7 +45,7 @@ export const MainScreen = ({ addToDo, todos, removeTodo, openTodo }) => {
                 keyExtractor={item => item.id.toString()}
                 data={todos}
                 renderItem={({ item }) => (
-                    <ToDo todo={item} onRemove={removeTodo} onOpen={openTodo} /> 
+                    <ToDo todo={item} onRemove={removeTodo} onOpen={changeScreen} /> 
                 )}
             />
         </View>
