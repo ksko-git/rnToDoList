@@ -1,6 +1,6 @@
 import React, { useReducer } from 'react';
 import { ADD_TODO, REMOVE_TODO, UPDATE_TODO } from '../types';
-import { TodoContext } from './TodoContext';
+import { TodoContext } from './todoContext';
 import { todoReducer } from './todoReducer'
 
 export const TodoState = ({ children }) => {

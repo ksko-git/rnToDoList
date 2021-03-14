@@ -4,7 +4,7 @@ import { View, StyleSheet } from 'react-native';
 import { Navbar } from './components/Navbar';
 import { MainScreen } from './screens/MainScreen';
 import { LAYOUT_BLANKS } from './enums/LAYOUT_BLANKS';
-import { TodoContext } from './context/todo/TodoContext';
+import { TodoContext } from './context/todo/todoContext';
 import { TodoScreen } from './screens/TodoScreen';
 
 export const MainLayout = () => {
