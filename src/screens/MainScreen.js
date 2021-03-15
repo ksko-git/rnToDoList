@@ -11,11 +11,15 @@ import {
     Image, 
     Dimensions 
 } from 'react-native';
+
 import { AddToDo } from '../components/AddToDo';
 import { ToDo } from '../components/ToDo';
+import { AppButton } from '../components/ui/AppButton';
 import { AppLoader } from '../components/ui/AppLoader';
+import { AppText } from '../components/ui/AppText';
 import { ScreenContext } from '../context/screen/screenContext';
 import { TodoContext } from '../context/todo/todoContext';
+import { APP_COLORS } from '../enums/APP_COLORS';
 import { LAYOUT_BLANKS } from '../enums/LAYOUT_BLANKS';
 
 export const MainScreen = () => {
@@ -70,6 +74,15 @@ export const MainScreen = () => {
         return <AppLoader />
     }
 
+    if (error) {
+        return (
+            <View style={styles.center}>
+                <AppText style={styles.error}>{error}</AppText>
+                <AppButton onPress={loadTodos}>Повторить</AppButton>
+            </View>
+        )
+    }
+
     let content = (
         <View style={{ width: deviceWidth }}>
             <FlatList
@@ -112,5 +125,14 @@ const styles = StyleSheet.create({
         width: '100%',
         height: '100%',
         resizeMode: 'contain'
+    },
+    center: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    error: {
+        fontSize: 20,
+        color: APP_COLORS.DANGER
     }
 })

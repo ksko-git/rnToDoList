@@ -35,21 +35,27 @@ export const TodoState = ({ children }) => {
 
     // получить список всех todo с сервера
     const fetchTodos = async () => {
-        // показываем экран загрузки
         showLoader()
-        const response = await fetch(
-            'https://rnlabels-default-rtdb.europe-west1.firebasedatabase.app/todos.json',
-            {
-                method: 'GET',
-                headers: { 'Content-Type': 'application/json' },
-            }
-        )
-        const data = await response.json()
-        console.log('Fetch data', data)
-        // преобразование объекта в массив
-        const todos = Object.keys(data).map(key => ({ ...data[key], id: key }))
-        dispatch({ type: FETCH_TODOS, todos })
-        hideLoader()
+        clearError()
+        try {
+            const response = await fetch(
+                'https://rnlabels-default-rtdb.europe-west1.firebasedatabase.app/todos.json',
+                {
+                    method: 'GET',
+                    headers: { 'Content-Type': 'application/json' },
+                }
+            )
+            const data = await response.json()
+            console.log('Fetch data', data)
+            // преобразование объекта в массив
+            const todos = Object.keys(data).map(key => ({ ...data[key], id: key }))
+            dispatch({ type: FETCH_TODOS, todos })
+        } catch (e) {
+            showError('Что-то пошло не так...')
+            console.log(e)
+        } finally {
+            hideLoader()
+        }
     }
 
     const addToDo = async title => {
