@@ -24,7 +24,24 @@ export const TodoState = ({ children }) => {
     const { changeScreen } = useContext(ScreenContext)
     const [state, dispatch] = useReducer(todoReducer, initState)
 
-    const addToDo = title => dispatch({ type: ADD_TODO, title: title})
+    const addToDo = async title => {
+        // запрос к серверу
+        // fetch возвращает промисс
+        // todos - коллекция, в которой все будет сохраняться
+        const response = await fetch(
+            'https://rnlabels-default-rtdb.europe-west1.firebasedatabase.app/todos.json',
+            {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ title })
+            }
+        )
+        // т.к. response - это не конечные даные, унжно их распарсить
+        // 'превращаем' объект сервера в json, который также является промиссом
+        const data = await response.json()
+        console.log('ID', data.name)
+        dispatch({ type: ADD_TODO, title: title, id: data.name })
+    }
 
     const removeTodo = id => {
         const todo = state.todos.find(t => t.id === id)
