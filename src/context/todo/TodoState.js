@@ -107,9 +107,16 @@ export const TodoState = ({ children }) => {
             },
             { 
                 text: 'Удалить', 
-                onPress: () => {
+                onPress: async () => {
                     // сначала возвращаемся на стартовый экран
                     changeScreen(null)
+                    await fetch(
+                        `https://rnlabels-default-rtdb.europe-west1.firebasedatabase.app/todos/${id}.json`,
+                        {
+                            method: 'DELETE',
+                            headers: { 'Content-Type': 'application/json' }
+                        }
+                    )
                     dispatch({ type: REMOVE_TODO, id: id })
                 }
             }
