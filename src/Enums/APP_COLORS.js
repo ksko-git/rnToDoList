@@ -7,7 +7,6 @@ export const APP_COLORS = {
     secondaryText: '#757575', // цвет для текста (второстепенный)
     brightText: '#e32636', // цвет для выделения текста (яркий)
 
-
     BLACK: '#000000',
     WHITE: '#ffffff',
     CYPRUS: '#003333',
