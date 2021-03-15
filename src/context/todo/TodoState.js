@@ -4,6 +4,7 @@ import { ScreenContext } from '../screen/screenContext';
 import { 
     ADD_TODO, 
     CLEAR_ERROR, 
+    FETCH_TODOS, 
     HIDE_LOADER, 
     REMOVE_TODO, 
     SHOW_ERROR, 
@@ -23,6 +24,22 @@ export const TodoState = ({ children }) => {
 
     const { changeScreen } = useContext(ScreenContext)
     const [state, dispatch] = useReducer(todoReducer, initState)
+
+    // получить список всех todo с сервера
+    const fetchTodos = async () => {
+        const response = await fetch(
+            'https://rnlabels-default-rtdb.europe-west1.firebasedatabase.app/todos.json',
+            {
+                method: 'GET',
+                headers: { 'Content-Type': 'application/json' },
+            }
+        )
+        const data = await response.json()
+        console.log('Fetch data', data)
+        // преобразование объекта в массив
+        const todos = Object.keys(data).map(key => ({ ...data[key], id: key }))
+        dispatch({ type: FETCH_TODOS, todos })
+    }
 
     const addToDo = async title => {
         // запрос к серверу
@@ -82,10 +99,13 @@ export const TodoState = ({ children }) => {
         <TodoContext.Provider 
             // todoContext (MainLayout)
             value={{ 
-                todos: state.todos ,
+                todos: state.todos,
+                loading: state.loading,
+                error: state.error,
+                fetchTodos, // экспортируем для вызова в компоненте в нужном месте
                 addToDo,
                 removeTodo,
-                updateTodo
+                updateTodo              
             }}
         >
             {children}

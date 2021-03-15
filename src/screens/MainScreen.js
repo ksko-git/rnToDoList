@@ -1,4 +1,9 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { 
+    useState, 
+    useEffect, 
+    useContext, 
+    useCallback 
+} from 'react';
 import { 
     View, 
     StyleSheet, 
@@ -14,12 +19,33 @@ import { LAYOUT_BLANKS } from '../enums/LAYOUT_BLANKS';
 
 export const MainScreen = () => {
 
-    const { todos, addToDo, removeTodo } = useContext(TodoContext)
+    const { 
+        todos, 
+        loading, 
+        error, 
+        fetchTodos, 
+        addToDo, 
+        removeTodo 
+    } = useContext(TodoContext)
     const { changeScreen } = useContext(ScreenContext)
 
     const [deviceWidth, setDeviceWidth] = useState(
         Dimensions.get('window').width - LAYOUT_BLANKS.paddingHorizontal * 2
     )
+
+    // Этот хук поможет избежать лишних вызовов этой функции 
+    // во время работы приложения,
+    // ведь она вызывается только один раз, при загрузке приложения.
+    // оборачивает в Callback метод fetchTodos()     
+    const loadTodos = useCallback(
+        async () => 
+            await fetchTodos(), 
+            // и складывает его в список зависимостей
+            [fetchTodos]
+    )
+    useEffect(() => {
+        loadTodos()
+    }, [])
 
     // запустится 1 раз при инициализации компонента
     //при изменении ширины экрана, вызывается функция,
