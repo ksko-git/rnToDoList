@@ -13,6 +13,7 @@ import {
 } from 'react-native';
 import { AddToDo } from '../components/AddToDo';
 import { ToDo } from '../components/ToDo';
+import { AppLoader } from '../components/ui/AppLoader';
 import { ScreenContext } from '../context/screen/screenContext';
 import { TodoContext } from '../context/todo/todoContext';
 import { LAYOUT_BLANKS } from '../enums/LAYOUT_BLANKS';
@@ -64,6 +65,10 @@ export const MainScreen = () => {
             Dimensions.removeEventListener('change', setNewWidth)
         }
     })
+
+    if (loading) {
+        return <AppLoader />
+    }
 
     let content = (
         <View style={{ width: deviceWidth }}>

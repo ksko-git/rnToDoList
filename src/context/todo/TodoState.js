@@ -25,8 +25,18 @@ export const TodoState = ({ children }) => {
     const { changeScreen } = useContext(ScreenContext)
     const [state, dispatch] = useReducer(todoReducer, initState)
 
+    const showLoader = () => dispatch({ type: SHOW_LOADER })
+
+    const hideLoader = () => dispatch({ type: HIDE_LOADER })
+    // error - принимаемый текст ошибки
+    const showError = error => dispatch({ type: SHOW_ERROR, error })
+
+    const clearError = () => dispatch({ type: CLEAR_ERROR })
+
     // получить список всех todo с сервера
     const fetchTodos = async () => {
+        // показываем экран загрузки
+        showLoader()
         const response = await fetch(
             'https://rnlabels-default-rtdb.europe-west1.firebasedatabase.app/todos.json',
             {
@@ -39,6 +49,7 @@ export const TodoState = ({ children }) => {
         // преобразование объекта в массив
         const todos = Object.keys(data).map(key => ({ ...data[key], id: key }))
         dispatch({ type: FETCH_TODOS, todos })
+        hideLoader()
     }
 
     const addToDo = async title => {
@@ -86,14 +97,6 @@ export const TodoState = ({ children }) => {
     }
 
     const updateTodo = (id, title) => dispatch({ type: UPDATE_TODO, id: id, title: title })
-
-    const showLoader = () => dispatch({ type: SHOW_LOADER })
-
-    const hideLoader = () => dispatch({ type: HIDE_LOADER })
-    // error - принимаемый текст ошибки
-    const showError = error => dispatch({ type: SHOW_ERROR, error })
-
-    const clearError = () => dispatch({ type: CLEAR_ERROR })
 
     return (
         <TodoContext.Provider 

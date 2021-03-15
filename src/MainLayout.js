@@ -16,7 +16,7 @@ export const MainLayout = () => {
     //     const todo = todos.find(t => t.id === id)
 
     return (
-        <View>
+        <View style={styles.wrapper}>
             <Navbar appTitle='Мои бирки' />
             <View style={styles.container}>
                 {todoId ? <TodoScreen /> : <MainScreen /> }
@@ -27,8 +27,12 @@ export const MainLayout = () => {
 
 const styles = StyleSheet.create({
     container: {
-      paddingHorizontal: LAYOUT_BLANKS.paddingHorizontal,
-      paddingVertical: LAYOUT_BLANKS.paddingVertical
+        flex: 1,
+        paddingHorizontal: LAYOUT_BLANKS.paddingHorizontal,
+        paddingVertical: LAYOUT_BLANKS.paddingVertical
+    },
+    wrapper: {
+        flex: 1
     }
   });
   
