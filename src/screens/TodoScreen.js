@@ -19,9 +19,9 @@ export const TodoScreen = () => {
     // модальное (всплывающее) окно не видно по умолчанию
     const [modal, setModal] = useState(false)
 
-    const saveHandler = title => {
+    const saveHandler = async title => {
         // передаем пропсы в App
-        updateTodo(todo.id, title)
+        await updateTodo(todo.id, title)
         // закрываем модальное окно
         setModal(false)
     }

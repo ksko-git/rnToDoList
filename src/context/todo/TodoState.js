@@ -77,9 +77,26 @@ export const TodoState = ({ children }) => {
         dispatch({ type: ADD_TODO, title: title, id: data.name })
     }
 
+    const updateTodo = async (id, title) => {
+        clearError()
+        try {
+            await fetch(
+                `https://rnlabels-default-rtdb.europe-west1.firebasedatabase.app/todos/${id}.json`,
+                {
+                    method: 'PATCH', // для изменения только части, а не всего элемента
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ title })
+                }
+            )
+            dispatch({ type: UPDATE_TODO, id: id, title: title })
+        } catch (e) {
+            showError('Что-то пошло не так...')
+            console.log(e)
+        }
+    }
+
     const removeTodo = id => {
         const todo = state.todos.find(t => t.id === id)
-
         Alert.alert(
             'Удаление элемента',
             `Вы уверены, что хотите удалить "${todo.title}"?`,
@@ -98,11 +115,8 @@ export const TodoState = ({ children }) => {
             }
             ],
             { cancelable: false }
-        )
-        
+        )        
     }
-
-    const updateTodo = (id, title) => dispatch({ type: UPDATE_TODO, id: id, title: title })
 
     return (
         <TodoContext.Provider 
