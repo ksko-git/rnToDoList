@@ -1,6 +1,10 @@
-import React, { useState  } from 'react';
-import { View, TextInput, Button, StyleSheet, Alert } from 'react-native';
-import { APP_COLORS } from './Enums/APP_COLORS';
+import React, { useState } from 'react';
+import { View, StyleSheet, Alert, Keyboard } from 'react-native';
+
+import { APP_COLORS } from '../enums/APP_COLORS';
+import { AntDesign } from '@expo/vector-icons';
+import { AppTextInput } from './ui/AppTextInput';
+import { AppButton } from './ui/AppButton'
 
 export const AddToDo = ({ onSubmit }) => {
 
@@ -10,6 +14,7 @@ export const AddToDo = ({ onSubmit }) => {
         if (value.trim()) {
             onSubmit(value) // добавить в стипок
             setValue('') // очистить input
+            Keyboard.dismiss()
         } else {
             Alert.alert('Название дела не может оставаться пустым!')
         }        
@@ -17,22 +22,25 @@ export const AddToDo = ({ onSubmit }) => {
 
     return (
         <View style={styles.mainBlock}>
-            <TextInput 
+            <AppTextInput 
                 style={styles.input} 
-                onChangeText={text => setValue(text)}
+                onChangeText={setValue}
                 value={value}
                 placeholder="Введите название дела..."
-                autoCorrect={false} // убрать автоисправление вводимых слов
+                placeholderTextColor={APP_COLORS.lightPurple}
+                autoCorrect={false}
             />
-            <Button 
-                style={styles.button} 
-                title="Добавить"
+            <AntDesign.Button 
                 onPress={pressHandler} 
-            />
+                name='pluscircleo' 
+                backgroundColor={APP_COLORS.CYPRUS}
+            >
+                Добавить
+            </AntDesign.Button>
         </View>        
     )
 }
-// стили:
+
 const styles = StyleSheet.create({
     mainBlock: {
         flexDirection: 'row',
@@ -44,9 +52,7 @@ const styles = StyleSheet.create({
         width: '60%',
         borderStyle: 'solid',
         borderBottomWidth: 2,
-        borderBottomColor: APP_COLORS.mountbattenPink,
+        borderBottomColor: APP_COLORS.input,
         padding: 10
-    },
-    button: {
     }
 })
