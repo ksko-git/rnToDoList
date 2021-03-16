@@ -39,7 +39,7 @@ export const TodoState = ({ children }) => {
         showLoader()
         clearError()
         try {
-            const data = Http.get(
+            const data = await Http.get(
                 'https://rnlabels-default-rtdb.europe-west1.firebasedatabase.app/todos.json'
             )
             // преобразование объекта в массив
