@@ -13,6 +13,7 @@ import {
 } from '../types';
 import { TodoContext } from './todoContext';
 import { todoReducer } from './todoReducer'
+import { Http } from '../../http';
 
 export const TodoState = ({ children }) => {
 
@@ -38,15 +39,9 @@ export const TodoState = ({ children }) => {
         showLoader()
         clearError()
         try {
-            const response = await fetch(
-                'https://rnlabels-default-rtdb.europe-west1.firebasedatabase.app/todos.json',
-                {
-                    method: 'GET',
-                    headers: { 'Content-Type': 'application/json' },
-                }
+            const data = Http.get(
+                'https://rnlabels-default-rtdb.europe-west1.firebasedatabase.app/todos.json'
             )
-            const data = await response.json()
-            console.log('Fetch data', data)
             // преобразование объекта в массив
             const todos = Object.keys(data).map(key => ({ ...data[key], id: key }))
             dispatch({ type: FETCH_TODOS, todos })
@@ -59,34 +54,24 @@ export const TodoState = ({ children }) => {
     }
 
     const addToDo = async title => {
-        // запрос к серверу
-        // fetch возвращает промисс
-        // todos - коллекция, в которой все будет сохраняться
-        const response = await fetch(
-            'https://rnlabels-default-rtdb.europe-west1.firebasedatabase.app/todos.json',
-            {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ title })
-            }
-        )
-        // т.к. response - это не конечные даные, унжно их распарсить
-        // 'превращаем' объект сервера в json, который также является промиссом
-        const data = await response.json()
-        console.log('ID', data.name)
-        dispatch({ type: ADD_TODO, title: title, id: data.name })
+        clearError()
+        try {
+            const data = await Http.post(
+                'https://rnlabels-default-rtdb.europe-west1.firebasedatabase.app/todos.json',
+                { title }
+            )
+            dispatch({ type: ADD_TODO, title: title, id: data.name })
+        } catch (e) {
+            showError('Что-то пошло не так...')
+        }
     }
 
     const updateTodo = async (id, title) => {
         clearError()
         try {
-            await fetch(
+            await Http.patch(
                 `https://rnlabels-default-rtdb.europe-west1.firebasedatabase.app/todos/${id}.json`,
-                {
-                    method: 'PATCH', // для изменения только части, а не всего элемента
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ title })
-                }
+                { title }
             )
             dispatch({ type: UPDATE_TODO, id: id, title: title })
         } catch (e) {
@@ -110,12 +95,8 @@ export const TodoState = ({ children }) => {
                 onPress: async () => {
                     // сначала возвращаемся на стартовый экран
                     changeScreen(null)
-                    await fetch(
-                        `https://rnlabels-default-rtdb.europe-west1.firebasedatabase.app/todos/${id}.json`,
-                        {
-                            method: 'DELETE',
-                            headers: { 'Content-Type': 'application/json' }
-                        }
+                    await Http.delete(
+                        `https://rnlabels-default-rtdb.europe-west1.firebasedatabase.app/todos/${id}.json`
                     )
                     dispatch({ type: REMOVE_TODO, id: id })
                 }
