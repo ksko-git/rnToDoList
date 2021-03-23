@@ -1,0 +1,103 @@
+<mxfile host="app.diagrams.net" modified="2021-03-03T07:12:41.878Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0.3 Safari/605.1.15" etag="VMfCG1DpoI8KZfoSJqjz" version="14.4.3" type="github">
+  <diagram id="QO0TOcYqyTY8CtWTL1_r" name="Page-1">
+    <mxGraphModel dx="946" dy="620" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="4j5Vw-Ui23RAjlFMlg0W-6" value="Бренд:" style="rounded=0;whiteSpace=wrap;html=1;shadow=0;glass=0;sketch=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="294" y="80" width="76" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="4j5Vw-Ui23RAjlFMlg0W-7" value="MANGO" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;glass=0;sketch=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="380" y="80" width="130" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="4j5Vw-Ui23RAjlFMlg0W-8" value="Made in:" style="rounded=0;whiteSpace=wrap;html=1;shadow=0;glass=0;sketch=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="294" y="120" width="76" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="4j5Vw-Ui23RAjlFMlg0W-9" value="CHINA" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;glass=0;sketch=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="380" y="120" width="130" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="4j5Vw-Ui23RAjlFMlg0W-11" value="Ваши заметки..." style="shape=note;size=20;whiteSpace=wrap;html=1;rounded=0;shadow=0;glass=0;sketch=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="290" y="480" width="220" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="4j5Vw-Ui23RAjlFMlg0W-12" value="Цена:" style="rounded=0;whiteSpace=wrap;html=1;shadow=0;glass=0;sketch=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="290" y="400" width="76" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="4j5Vw-Ui23RAjlFMlg0W-13" value="3499" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;glass=0;sketch=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="376" y="400" width="70" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="4j5Vw-Ui23RAjlFMlg0W-14" value="руб." style="rounded=0;whiteSpace=wrap;html=1;shadow=0;glass=0;sketch=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="456" y="400" width="50" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="4j5Vw-Ui23RAjlFMlg0W-15" value="Введите название вещи..." style="rounded=0;whiteSpace=wrap;html=1;shadow=0;glass=0;sketch=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="292" y="40" width="216" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="4j5Vw-Ui23RAjlFMlg0W-16" value="Дата покупки:" style="rounded=0;whiteSpace=wrap;html=1;shadow=0;glass=0;sketch=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="290" y="440" width="76" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="4j5Vw-Ui23RAjlFMlg0W-17" value="01.01.2021" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;glass=0;sketch=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
+          <mxGeometry x="376" y="440" width="130" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="4j5Vw-Ui23RAjlFMlg0W-43" value="Размеры" style="swimlane;rounded=0;shadow=0;glass=0;sketch=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="290" y="160" width="220" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="4j5Vw-Ui23RAjlFMlg0W-18" value="IT" style="rounded=0;whiteSpace=wrap;html=1;shadow=0;glass=0;sketch=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="4j5Vw-Ui23RAjlFMlg0W-43">
+          <mxGeometry x="40" y="30" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="4j5Vw-Ui23RAjlFMlg0W-19" value="EU" style="rounded=0;whiteSpace=wrap;html=1;shadow=0;glass=0;sketch=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="4j5Vw-Ui23RAjlFMlg0W-43">
+          <mxGeometry x="90" y="30" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="4j5Vw-Ui23RAjlFMlg0W-20" value="ES" style="rounded=0;whiteSpace=wrap;html=1;shadow=0;glass=0;sketch=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="4j5Vw-Ui23RAjlFMlg0W-43">
+          <mxGeometry x="140" y="30" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="4j5Vw-Ui23RAjlFMlg0W-21" value="2C" style="rounded=0;whiteSpace=wrap;html=1;shadow=0;glass=0;sketch=1;fillColor=#ffe6cc;strokeColor=#d79b00;direction=south;" vertex="1" parent="4j5Vw-Ui23RAjlFMlg0W-43">
+          <mxGeometry x="40" y="55" width="40" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="4j5Vw-Ui23RAjlFMlg0W-22" value="75C" style="rounded=0;whiteSpace=wrap;html=1;shadow=0;glass=0;sketch=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="4j5Vw-Ui23RAjlFMlg0W-43">
+          <mxGeometry x="90" y="55" width="40" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="4j5Vw-Ui23RAjlFMlg0W-23" value="85C" style="rounded=0;whiteSpace=wrap;html=1;shadow=0;glass=0;sketch=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="4j5Vw-Ui23RAjlFMlg0W-43">
+          <mxGeometry x="140" y="55" width="40" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="4j5Vw-Ui23RAjlFMlg0W-37" value="FR" style="rounded=0;whiteSpace=wrap;html=1;shadow=0;glass=0;sketch=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="4j5Vw-Ui23RAjlFMlg0W-43">
+          <mxGeometry x="40" y="90" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="4j5Vw-Ui23RAjlFMlg0W-38" value="UK" style="rounded=0;whiteSpace=wrap;html=1;shadow=0;glass=0;sketch=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="4j5Vw-Ui23RAjlFMlg0W-43">
+          <mxGeometry x="90" y="90" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="4j5Vw-Ui23RAjlFMlg0W-39" value="USA" style="rounded=0;whiteSpace=wrap;html=1;shadow=0;glass=0;sketch=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="4j5Vw-Ui23RAjlFMlg0W-43">
+          <mxGeometry x="140" y="90" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="4j5Vw-Ui23RAjlFMlg0W-40" value="85C" style="rounded=0;whiteSpace=wrap;html=1;shadow=0;glass=0;sketch=1;fillColor=#ffe6cc;strokeColor=#d79b00;direction=south;" vertex="1" parent="4j5Vw-Ui23RAjlFMlg0W-43">
+          <mxGeometry x="40" y="115" width="40" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="4j5Vw-Ui23RAjlFMlg0W-41" value="34C" style="rounded=0;whiteSpace=wrap;html=1;shadow=0;glass=0;sketch=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="4j5Vw-Ui23RAjlFMlg0W-43">
+          <mxGeometry x="90" y="115" width="40" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="4j5Vw-Ui23RAjlFMlg0W-42" value="34C" style="rounded=0;whiteSpace=wrap;html=1;shadow=0;glass=0;sketch=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="4j5Vw-Ui23RAjlFMlg0W-43">
+          <mxGeometry x="140" y="115" width="40" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="4j5Vw-Ui23RAjlFMlg0W-50" value="Уход" style="swimlane;rounded=0;shadow=0;glass=0;sketch=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="290" y="320" width="220" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="4j5Vw-Ui23RAjlFMlg0W-44" value="&lt;span style=&quot;color: rgba(0 , 0 , 0 , 0) ; font-family: monospace ; font-size: 0px&quot;&gt;%3CmxGraphModel%3E%3Croot%3E%3CmxCell%20id%3D%220%22%2F%3E%3CmxCell%20id%3D%221%22%20parent%3D%220%22%2F%3E%3CmxCell%20id%3D%222%22%20value%3D%22MANGO%22%20style%3D%22rounded%3D1%3BwhiteSpace%3Dwrap%3Bhtml%3D1%3Bshadow%3D0%3Bglass%3D0%3Bsketch%3D1%3BfillColor%3D%23ffe6cc%3BstrokeColor%3D%23d79b00%3B%22%20vertex%3D%221%22%20parent%3D%221%22%3E%3CmxGeometry%20x%3D%22380%22%20y%3D%2280%22%20width%3D%22130%22%20height%3D%2230%22%20as%3D%22geometry%22%2F%3E%3C%2FmxCell%3E%3C%2Froot%3E%3C%2FmxGraphModel%3E&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;glass=0;sketch=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="4j5Vw-Ui23RAjlFMlg0W-50">
+          <mxGeometry x="10" y="30" width="200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="4j5Vw-Ui23RAjlFMlg0W-46" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://static1.kupivip.ru/kupivip/info_pages/uhod-za-odezhdoi-i-obuvu/symbols/image088.png;" vertex="1" parent="4j5Vw-Ui23RAjlFMlg0W-50">
+          <mxGeometry x="64" y="34" width="24" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="4j5Vw-Ui23RAjlFMlg0W-47" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://static1.kupivip.ru/kupivip/info_pages/uhod-za-odezhdoi-i-obuvu/symbols/image089.png;" vertex="1" parent="4j5Vw-Ui23RAjlFMlg0W-50">
+          <mxGeometry x="94" y="34" width="24" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="4j5Vw-Ui23RAjlFMlg0W-48" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://static1.kupivip.ru/kupivip/info_pages/uhod-za-odezhdoi-i-obuvu/symbols/image090.png;" vertex="1" parent="4j5Vw-Ui23RAjlFMlg0W-50">
+          <mxGeometry x="118" y="34" width="26" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="4j5Vw-Ui23RAjlFMlg0W-49" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://static1.kupivip.ru/kupivip/info_pages/uhod-za-odezhdoi-i-obuvu/symbols/image091.png;" vertex="1" parent="4j5Vw-Ui23RAjlFMlg0W-50">
+          <mxGeometry x="142" y="34" width="24" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="4j5Vw-Ui23RAjlFMlg0W-5" value="" style="rounded=0;whiteSpace=wrap;html=1;glass=0;shadow=0;sketch=1;fillColor=none;" vertex="1" parent="4j5Vw-Ui23RAjlFMlg0W-50">
+          <mxGeometry x="-10" y="-290" width="240" height="520" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
