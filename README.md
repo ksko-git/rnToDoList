@@ -1,2 +1,2 @@
-# rnLabels
- Приложения для хранения бирок одежды. Рабочее название "Мои бирки".
+# rnToDoList
+ A dynamic todo list app developed using React Native.
